@@ -9,7 +9,7 @@ Using Jenkins Master with Docker as Agents Instead of Using Ec2 Machines as Slav
 - systemctl restart docker
 
 
-* From the root user create a password for Jenkins users and add jenkinst to sudoers.
+* From the root user create a password for Jenkins users and add jenkins to sudoers.
 - sudo passwd Jenkins
 - sudo visudo
 add this line        jenkins ALL=(ALL) NOPASSWD:ALL
@@ -33,5 +33,5 @@ A simple Jenkins pipeline to verify if the docker agent configuration is working
 * From the project >> first-pipeline >> Configuration >> Pipeline from scm - ener GitHub url, branch name, parent directory, and append my-first-pipeline/jenkinsfile  and save.
 * Now build the project here we can see that our pipeline script from GitHub is success, it will create an image of node-16 alphine using docker and checks the docker version.
 * After that the docker container is stopped and removed.
-* The process here can be that if we use Jenkins master slave architecture we need to have specific no of slaves of ec2 instances to run particular pipelines. But here we used docker as agent, we made a pipeline run to perform this docker has provided an agent to run this container and after the job is done container is automatically deleted. By this the efficiency and const-optimization is maintained. Only when there is a request the container is created.
+* The process here can be that if we use Jenkins master slave architecture we need to have specific no of slaves of ec2 instances to run particular pipelines. But here we used docker as agent, we made a pipeline run to perform this docker has provided an agent to run this container and after the job is done container is automatically deleted. By this the efficiency and cost-optimization is maintained. Only when there is a request the container is created.
 * Major challenges would be managing the dependencies, upgrading VM's, technically there should be a separate team to maintain nodes in VM approach,
