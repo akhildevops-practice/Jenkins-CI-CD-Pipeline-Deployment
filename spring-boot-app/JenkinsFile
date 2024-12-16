@@ -43,7 +43,7 @@ pipeline {
     }
     stage('Update Deployment File') {
       environment {
-        GIT_REPO_NAME = "Jenkins-CI-CD-Pipeline-Deployment."
+        GIT_REPO_NAME = "Jenkins-CI-CD-Pipeline-Deployment"
         GIT_USER_NAME = "akhilprabhu20"
       }
       steps {
